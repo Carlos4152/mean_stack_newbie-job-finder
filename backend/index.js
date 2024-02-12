@@ -11,10 +11,8 @@ import connectDataBase from './config/database.js';
 import { jobRouter } from './routes/jobsRoutes.js';
 import { imageRouter } from './routes/userImagesRoutes.js';
 
-
 dotenv.config();
 connectDataBase();
-
 
 const PORT = process.env.PORT || 4000;
 const app = express();
