@@ -20,6 +20,19 @@
   border: 2px solid gray;
 }
 
+.services__content a {
+  color: var(--primary);
+}
+
+.services__content a:hover {
+  color: var(--primary-400);
+}
+
+.services__img {
+  min-height: 400px;
+  min-width: 300px;
+}
+
 
 @media (min-width: 767px) {
   .home_hero {

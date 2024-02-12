@@ -14,7 +14,11 @@
 
 
 .testimonial {
-  background-color: #149e9e36;
+  background-color: #19b4b436;
+}
+
+.testimonial .carousel-item {
+  background-color: #19b4b400;
 }
 
 

@@ -4,19 +4,16 @@
 </section>
 
 <section class="services-page my-5">
-  <div class="container ">
-    <div class="row shadow-lg mt-4 mt-lg-5" *ngFor="let service of services; ">
+  <div class="container px-4">
+    <a class="row mt-4 mt-lg-5 text-decoration-none" *ngFor="let service of services;" routerLink="/signup">
       <div class="service-img col-sm-12 col-lg-4 col-xl-3 p-0">
-        <img src={{service.img}} alt="" class="w-100 h-100 rounded-sm-0" width="300" height="300px">
+        <img src={{service.img}} alt="" class="w-100 h-100 rounded-sm-0 object-fit-cover" width="300" height="300px">
       </div>
       <div class="col-sm-12 col-lg-8 service-content py-3 px-lg-4 d-flex flex-column justify-content-center">
         <h2 class="fw-bold h1">{{service.title}}</h2>
         <p class="pt-2 lh-lg">{{service.desc}}</p>
-        <div class="d-flex gap-3 service-btn">
-          <a href="#" routerLink="/signup" class="px-3 py-2 rounded-1">Create an Account</a>
-        </div>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 

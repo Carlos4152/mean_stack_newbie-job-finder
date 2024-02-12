@@ -12,7 +12,7 @@
           the first step towards a fulfilling career.
         </p>
         <div class="hero_btn mt-5 w-100">
-          <a routerLink="/login" class=" text-decoration-none fw-semibold explor px-3 py-2 rounded-3 px-xl-4 py-xl-3">Explor
+          <a routerLink="/login" class=" text-decoration-none fw-semibold explor px-3 py-2 rounded-3 px-xl-4 py-xl-3">Explore
             Jobs</a>
           <a routerLink="/contact" class="ms-3 text-decoration-none fw-semibold contact px-3 py-2 rounded-3 px-xl-4 py-xl-3">Contact
             Us</a>
@@ -23,16 +23,16 @@
 </section>
 
 <section class="our_services container pt-5 py-lg-5 my-lg-5">
-  <h2 class="fw-bold text-center text-lg-start h1">Our Service</h2>
+  <h2 class="fw-bold text-center text-lg-start h1">Our Services</h2>
   <div class="row mt-5">
     <div class="col-lg-4 mt-3 mt-lg-0" *ngFor="let service of services; let i = index">
-      <div class="services__img text-center text-lg-start">
-        <img src={{service.img}} alt={{service.title}} class="img-fluid">
+      <div class="services__img text-center text-lg-start border position-relative">
+        <img src={{service.img}} alt={{service.title}} class="w-100 h-100 object-fit-cover position-absolute top-0 end-0 start-0 bottom-0">
       </div>
       <div class="services__content">
         <p class="m-0 fw-bold py-3 text-start title fs-5">{{service.title}}</p>
         <p class="lh-lg">{{service.desc.substr(0, 170) + '...'}}</p>
-        <a href="#" class="text-decoration-none" routerLink="/services">
+        <a href="#" class="text-decoration-none fw-semibold" routerLink="/services">
           Learn More
           <i class="bi bi-arrow-right ms-2"></i>
         </a>
