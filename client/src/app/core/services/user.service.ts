@@ -9,7 +9,7 @@ import { Application } from '../models/application.interface';
   providedIn: 'root'
 })
 export class UserService {
-  userURL = 'http://localhost:3000/user';
+  userURL = 'https://niewbiejobfinder.vercel.app/user';
   userApplications: Application[] =[]
 
   constructor(private http: HttpClient) { }
