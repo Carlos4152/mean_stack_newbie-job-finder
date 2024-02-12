@@ -1,0 +1,15 @@
+.about_us span {
+  color: var(--primary-400);
+}
+
+.home-about-btn,
+.cta-btn {
+  background-color: var(--primary-400);
+  color: white;
+  text-decoration: none;
+}
+
+.home-about-btn:hover,
+.cta-btn:hover {
+  background-color: #184747;
+}

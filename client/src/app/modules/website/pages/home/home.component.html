@@ -1,0 +1,112 @@
+<app-navbar></app-navbar>
+<section class="home_hero">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-md-8 col-xl-7 py-5 ">
+        <h1 class="fw-bold text-white">
+          Unlocking Opportunities for Entry-Level Talent
+        </h1>
+        <p class="text-white mt-4 lh-lg">
+          We specialize in unlocking opportunities for individuals by using our platform to connect entry-level talent
+          with a diverse range of job opportunities, making the job search process seamless and empowering you to take
+          the first step towards a fulfilling career.
+        </p>
+        <div class="hero_btn mt-5 w-100">
+          <a routerLink="/login" class=" text-decoration-none fw-semibold explor px-3 py-2 rounded-3 px-xl-4 py-xl-3">Explor
+            Jobs</a>
+          <a routerLink="/contact" class="ms-3 text-decoration-none fw-semibold contact px-3 py-2 rounded-3 px-xl-4 py-xl-3">Contact
+            Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="our_services container pt-5 py-lg-5 my-lg-5">
+  <h2 class="fw-bold text-center text-lg-start h1">Our Service</h2>
+  <div class="row mt-5">
+    <div class="col-lg-4 mt-3 mt-lg-0" *ngFor="let service of services; let i = index">
+      <div class="services__img text-center text-lg-start">
+        <img src={{service.img}} alt={{service.title}} class="img-fluid">
+      </div>
+      <div class="services__content">
+        <p class="m-0 fw-bold py-3 text-start title fs-5">{{service.title}}</p>
+        <p class="lh-lg">{{service.desc.substr(0, 170) + '...'}}</p>
+        <a href="#" class="text-decoration-none" routerLink="/services">
+          Learn More
+          <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-us-section></app-us-section>
+<app-testimonial></app-testimonial>
+
+<section class="choose-us container py-lg-5">
+  <div class="row title justify-content-center pt-5">
+    <div class="col-sm-8 text-center">
+      <h2 class="h1 choose-title-header fw-bold">Why Choose Us</h2>
+      <p class="lh-lg py-3">
+        When you choose Newbie Job Finder, you're not just selecting a job platform – you're opting for a
+        trans-formative experience that goes beyond traditional job hunting. Here's why our platform stands out.
+      </p>
+    </div>
+  </div>
+
+  <div class="row py-3">
+    <div class="col-lg-4 text-center">
+      <div class="box-img py-4">
+        <i class="bi bi-people-fill fs-1 choose-icon px-3 py-2 rounded-circle"></i>
+      </div>
+      <div class="box-content">
+        <p class="fw-bold choose-subtitle">
+          Access to a Diverse Pool of Entry-Level Talent
+        </p>
+        <p class="lh-lg">
+          Our platform prides itself on sourcing a diverse pool of entry-level talent, ensuring that your organization
+          benefits from a broad spectrum of skills and perspectives.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-4 text-center">
+      <div class="box-img py-4">
+        <i class="bi bi-database-fill-check fs-1 choose-icon px-3 py-2 rounded-circle"></i>
+      </div>
+      <div class="box-content">
+        <p class="fw-bold choose-subtitle">
+          Streamlined Hiring Processes
+        </p>
+        <p class="lh-lg">
+          Say goodbye to the complexities of recruitment. Newbie Job Finder offers streamlined hiring processes that
+          prioritize efficiency and effectiveness.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-4 text-center">
+      <div class="box-img py-4">
+        <i class="bi bi-activity fs-1 choose-icon px-3 py-2 rounded-circle"></i>
+      </div>
+      <div class="box-content">
+        <p class="fw-bold choose-subtitle">
+          Committed to Your Growth and Development
+        </p>
+        <p class="lh-lg">
+          We are more than just a job platform; we are your partners in growth. Our commitment extends beyond filling
+          positions to fostering the long-term success of both employers and job seekers.
+        </p>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</section>
+
+<app-cta></app-cta>
+<app-form></app-form>
+<app-footer></app-footer>

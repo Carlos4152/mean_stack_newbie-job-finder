@@ -1,0 +1,22 @@
+.header {
+  background-color: white;
+}
+
+.salary {
+  background-color: #b6b3b3;
+  color: rgb(86, 88, 87);
+}
+
+.application-action .apply {
+  background-color: var(--primary-400);
+  color: white;
+  border-radius: 2px;
+}
+
+.application-action .apply:hover {
+  background-color: var(--primary);
+}
+
+.application-action .applied {
+  cursor: default;
+}

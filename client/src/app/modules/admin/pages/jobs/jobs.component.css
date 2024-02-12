@@ -1,0 +1,67 @@
+
+
+.job-details-header {
+  background-color: white;
+}
+
+.job-desc {
+  overflow-y: scroll;
+  height: 450px;
+}
+
+.job-post {
+  height: 528px;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c4c3c3;
+  border-radius: 15px;
+}
+
+.salary {
+  background-color: #b6b3b3;
+  color: rgb(86, 88, 87);
+}
+
+/* Job Posting Section */
+.job-posting-details {
+  height: 550px;
+  overflow-y: hidden;
+}
+
+/* Search Input */
+.job-title-search input {
+  box-shadow: none;
+}
+
+.job-title-search button,
+.application-action button {
+  background-color: var(--primary-400);
+  color: white;
+  border-radius: 2px;
+}
+
+.job-title-search button:hover,
+.application-action button:hover {
+  background-color: var(--primary);
+}
+
+.job-card {
+  cursor: pointer;
+}
+
+.active-class {
+  background-color: var(--primary-400);
+  color: white
+}
+

@@ -1,0 +1,57 @@
+<admin-navbar></admin-navbar>
+
+<section class="applications pt-5 container">
+  <div class="py-lg-3">
+    <div class="good-job">
+      <h1 class="fw-bold">Hi {{username | titlecase}}! </h1>
+      <p>This is your Application section, let's take a look and see how we are doing so far.</p>
+    </div>
+    <!-- Search Bar -->
+      <form [formGroup]="searchForm" class="row" (ngSubmit)="searchApplication()">
+        <div class="search-input col-sm-6 ">
+          <input type="text" class="form-control py-2" formControlName="position" placeholder="Search by position name" >
+        </div>
+        <div class="search-input col-sm-6 col-md-4 mt-3 mt-md-0 pb-3 pb-md-0">
+          <button class="border-0 fw-semibold py-2 px-4 text-white rounded-1" type="submit">Search</button>
+          <button class="fw-semibold px-3  border-0 fw-semibold py-2 rounded-1 text-white ms-3" (click)="resetSearch()"> 
+            <i class="bi bi-arrow-clockwise "></i>
+            Rest
+          </button>
+        </div>
+      </form>
+    <!--- Applied Jobs Section -->
+    <div class="applied-jobs mt-md-4 row border-top">
+      <div class="applied-card col-sm-3 col-md-4 p-0" *ngFor="let job of userApplications">
+        <div class="card-inner-box rounded-3 border p-4 m-2">
+          <!-- Action Card Delete or Edit-->
+          <div class="edit-delete text-end pb-4">
+            <a href="" class="text-decoration-none ms-3" [routerLink]="['/jobs', job._id]">
+              <i class="bi bi-eye-fill"></i>
+            </a>
+            <a class="text-decoration-none ms-3" (click)="deleteApplication(job)" style="cursor: pointer;">
+              <i class="bi bi-trash3-fill"></i>
+            </a>
+          </div>
+          <!-- Card Header-->
+          <div class="card-header">
+            <h5 class="fw-semibold">{{job.position}}</h5>
+            <p class="m-0">{{job.company}}</p>
+            <p class="m-0">{{job.location}} • Office</p>
+          </div>
+          <!-- Salary Range-->
+          <div class="card-header mt-4 d-flex justify-content-between ">
+            <p class="m-0 fw-semibold">USD</p>
+            <p class="m-0">{{job.salary}}</p>
+          </div>
+          <!-- Date -->
+          <div class="card-header mt-4 d-flex justify-content-between">
+            <p class="m-0 fw-semibold">Date</p>
+            <p class="m-0">Feb 15, 2024</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <app-alerts [title]="title" [message]="desc"></app-alerts>
+</section>

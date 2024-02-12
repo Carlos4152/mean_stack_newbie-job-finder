@@ -1,0 +1,23 @@
+.contact-main-container {
+  background-color: var(--primary-400);
+  color: white
+}
+
+/* Form Section  */
+
+.input-btn button {
+  background-color: var(--primary-400);
+  color: white;
+}
+
+.input-btn button:hover {
+  background-color: var(--primary);
+}
+
+.container h2 {
+  color: var(--primary-400);
+}
+
+.form-control{
+  box-shadow: none;
+}

@@ -1,0 +1,95 @@
+<admin-navbar></admin-navbar>
+
+<section class="job-details pt-4 container">
+  <div class="back-button col-sm-6">
+    <a routerLink="/applications" class="d-flex text-decoration-none fw-semibold align-items-center gap-1" 
+    [ngClass]="userApplication === true ? '' : 'd-none'">
+      <i class="bi bi-arrow-left-short fs-5"></i>
+      Back to applications
+    </a>
+    <a routerLink="/jobs" class="d-flex text-decoration-none fw-semibold align-items-center gap-1" 
+    [ngClass]="userApplication === false ? '' : 'd-none'">
+      <i class="bi bi-arrow-left-short fs-5"></i>
+      Back to Jobs Listing
+    </a>
+  </div>
+
+  <div class="row col-lg-6">
+    <div class="header row justify-content-between align-items-center shadow-sm px-3 py-1 mt-3 py-3"
+    *ngFor="let pro of jobApplication;">
+
+    <div class="card-title col-sm-6">
+      <p class="m-0 fw-semibold">{{pro.company}}</p>
+      <h4 class="fw-semibold m-0">{{pro.position}}</h4>
+      <p class="m-0">{{pro.location}}</p>
+    </div>
+    <div class="application-action col-sm-6 mt-3">
+      <div class="cta d-flex gap-3 align-items-center">
+        <i class="bi bi-bookmark-star fs-4"></i>
+        <i class="bi bi-bookmark-star-fill d-none"></i>
+        <button class="applied border-0 px-3 py-2 fw-semibold" [ngClass]="userApplication === true ? '' : 'd-none'">
+          Applied
+        </button>
+        <button class=" apply border-0 px-3 py-2 fw-semibold" [ngClass]="userApplication === false ? '' : 'd-none'" (click)="createApplication(pro)">
+          Apply
+        </button>
+  
+      </div>
+    </div>
+  </div>
+  <div class="job-desc pt-3 px-3 pb-md-3 " *ngFor="let pro of jobApplication;">
+    <div class="duties">
+      <p class="m-0 fw-bold">Responsibilities</p>
+      <p class="">{{pro.duties.desc}}:</p>
+
+      <ul class="d-flex flex-column gap-2" *ngFor="let pro of jobApplication;">
+        <li *ngFor="let job of pro.duties.list">
+          {{ job }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="requirements pb-md-3">
+      <p class="m-0 fw-bold">Required Skills</p>
+      <p class="">
+        As a Front End Developer at PSAI, you will have the ability to hone your craft and advance your core
+        skillset; but before we can do that, here are just a few of the skills and experience you should have
+        coming
+        in:
+      </p>
+
+      <ul class="d-flex flex-column gap-2">
+        <li>
+          A bachelor’s degree/pursuing a bachelor's degree in design, computer science, information, or a related
+          field
+        </li>
+        <li>
+          Expert level knowledge and firsthand experience with HTML and CSS
+        </li>
+        <li>
+          Expert level knowledge and firsthand experience with Javascript/JQuery
+        </li>
+        <li>
+          Expert level knowledge and firsthand experience in desktop, mobile and responsive web design
+        </li>
+        <li>
+          Experience/familiarity with .Net/MVC/Razor and Microsoft Azure
+        </li>
+        <li>
+          Ability to explain and translate your work to those under you as well as in different departments
+        </li>
+      </ul>
+
+      <div class="salary py-2 row align-items-center">
+        <p class="m-0 text-white fw-semibold col-6">Average Salary</p>
+        <p class="m-0 text-success fw-semibold col-6 text-end">$80k - $100</p>
+      </div>
+    </div>
+
+    
+
+  </div>
+  </div>
+  
+  <app-alerts [title]="title" [message]="message"></app-alerts>
+</section>

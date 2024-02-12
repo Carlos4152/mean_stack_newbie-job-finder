@@ -1,0 +1,46 @@
+.user-image img {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  border-radius: 50%;
+  border: 5px solid var(--primary-400);
+}
+
+
+.update-btn {
+  background-color: var(--primary-400);
+  color: white;
+}
+
+.account-header {
+  background-color: var(--primary-400);
+  height: 55px;
+}
+.account-header h2 {
+  letter-spacing: 2px;
+}
+
+.form input {
+  box-shadow: none;
+}
+
+.update-btn {
+  background-color: var(--primary-400);
+  cursor: pointer;
+}
+
+.update-btn:hover {
+  background-color: var(--primary);
+ 
+}
+
+.delete-btn {
+  background-color: #e83939;
+  color: white;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #ed0909;
+  
+}

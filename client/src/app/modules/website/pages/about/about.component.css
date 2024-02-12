@@ -1,0 +1,19 @@
+
+.our__mission_title span,
+.subtitle,
+.core_value h2{
+  color: var(--primary-400);
+}
+
+.mission_btn a,
+.choose_btn a{
+  background-color: var(--primary-400);
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.mission_btn a:hover,
+.choose_btn a:hover {
+  background-color: var(--primary);
+}
+

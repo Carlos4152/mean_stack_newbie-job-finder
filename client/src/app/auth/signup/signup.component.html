@@ -1,0 +1,99 @@
+<app-navbar></app-navbar>
+
+<section class="registration container py-5 position-relative">
+
+  <div class="row justify-content-center">
+    <div class="col-sm-5 col-md-8 col-lg-6">
+      <h1 class="fw-bold text-center">SIGN UP</h1>
+      <form action="" class="py-4" [formGroup]="registrationForm" (ngSubmit)="submitForm()">
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="fw-semibold text-secondary m-0 pb-1">First Name</p>
+            <input 
+            type="text" 
+            class="form-control py-3" 
+            formControlName="first_name"
+            [class.error]="isInvalid(registrationForm.get('first_name'))"
+            >
+          </div>
+          <div class="col-sm-6 pt-4 pt-md-0">
+            <p class="fw-semibold text-secondary m-0 pb-1">Last Name</p>
+            <input 
+            type="text" 
+            class="form-control py-3" 
+            formControlName="last_name" 
+            [class.error]="isInvalid(registrationForm.get('last_name'))"
+            >
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-sm-12">
+            <p class="fw-semibold text-secondary m-0 pb-1">Email Address</p>
+            <input 
+            type="text" 
+            class="form-control py-3" 
+            formControlName="userEmail"
+            [class.error]="isInvalid(registrationForm.get('userEmail'))"
+            >
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-sm-12">
+            <p class="fw-semibold text-secondary m-0 pb-1">Password</p>
+            <input 
+            type="password" 
+            class="form-control py-3" 
+            formControlName="password"
+            [class.error]="isInvalid(registrationForm.get('password'))">
+          </div>
+          <small>
+            <ul class="list-unstyled pt-3">
+              <li class="d-flex align-items-center gap-2">
+                <p class="m-0 text-secondary">Password strength: Must be at least 8/10</p>
+              </li>
+              <li class="pt-2 d-flex align-items-center gap-2">
+                <p class="m-0 text-secondary">Must be at least 8 characters</p>
+              </li>
+            </ul>
+          </small>
+        </div>
+
+        <div class="login-with py-3">
+          <p class="text-secondary text-center">Sign up with</p>
+          <div class="login-options d-flex align-items-center justify-content-center gap-5 pt-3">
+            <div class="google-img shadow-lg p-3 rounded-3">
+              <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt=""
+                width="45">
+            </div>
+
+            <div class="faceboo-image shadow-lg  p-3 rounded-3">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/free-facebook-72-189788.png" alt="" width="40">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row mt-4">
+          <div class="col-sm-12 btn-container pb-4">
+            <button type="submit" class="w-100 py-3 px-4 fw-semibold d-flex justify-content-between border-0 rounded-2 align-items-center">
+              Complete Registration
+              <i class="bi bi-arrow-right fs-5"></i>
+            </button>
+          </div>
+          <small class="text-secondary">
+            We take your data privacy very seriously and will not share your details with anyone else. By registering you accept our Term & Conditions and Privacy Policy
+          </small>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <app-alerts [title]="title" [message]="desc"></app-alerts>
+
+</section>
+
+<app-footer></app-footer>
+

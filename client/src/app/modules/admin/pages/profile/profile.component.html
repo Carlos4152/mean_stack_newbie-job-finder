@@ -1,0 +1,98 @@
+<admin-navbar></admin-navbar>
+
+<section class="container py-5">
+	<div class="row justify-content-center gap-2">
+		<!-- Profile picture and Applications -->
+		<div class="col-sm-3 border rounded-1 pt-5 p-0">
+			<div class="profile-header text-center">
+				<div class="user-image py-3 position-relative">
+					<img [src]="photoSelected || '../../assets/default-img.png'" alt="" class="object-fit-cover"
+						(click)="photoInput.click()" style="cursor: pointer;">
+					<form class="file-section pt-4 position-relative">
+						<input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
+					</form>
+				</div>
+				<p class="h4 fw-semibold">{{username | titlecase}}</p>
+				<div class="update-picture pt-3">
+					<button class="border-0 py-2 px-3 fw-semibold update-btn rounded-2" [ngClass]="toggleButton ? 'd-none' : '' " (click)="uploadImage()">
+						UPLOAD PICTURE
+					</button>
+					<button class="border-0 py-2 px-3 fw-semibold update-btn rounded-2" [ngClass]="!toggleButton ? 'd-none' : '' " (click)="updatePicture()">
+						UPDATE PICTURE
+					</button>
+				</div>
+			</div>
+
+			<div class="job-application-resume mt-4 pt-5">
+				<div class="job-box d-flex justify-content-between border-bottom border-top py-2 px-3">
+					<p class="m-0">Applied Jobs</p>
+					<p class="m-0 fw-bold">20</p>
+				</div>
+				<div class="job-box d-flex justify-content-between border-bottom py-2 px-3 align-items-center">
+					<p class="m-0">Answers</p>
+					<p class="m-0 fw-bold">4</p>
+				</div>
+				<div class="job-box d-flex justify-content-between border-bottom py-2 px-3">
+					<p class="m-0">Linkedin Profile</p>
+					<a href="https://www.linkedin.com/in/carloslopez1993/" target="_blank">
+						<i class="bi bi-box-arrow-in-up-right fw-bold"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- Account Details-->
+		<div class="col-sm-8 border p-0 rounded-3">
+			<div class="account-header d-flex justify-content-between align-items-center rounded-top px-5">
+				<h2 class="fw-bold text-white text-center pt-2">PROFILE DETAILS</h2>
+			</div>
+
+			<form [formGroup]="profileForm" class="row pt-4 gap-3 justify-content-center form "
+				(ngSubmit)="addInfo(); $event.preventDefault()">
+				<div class="col-sm-5">
+					<p class="m-0 pb-2 fw-semibold">Professional career</p>
+					<input type="text" class="form-control text-secondary" formControlName="career">
+				</div>
+				<div class="col-sm-5">
+					<p class="m-0 pb-2 fw-semibold">Year of experience</p>
+					<input type="text" class="form-control text-secondary" formControlName="experience">
+				</div>
+				<div class="col-sm-5">
+					<p class="m-0 pb-2 fw-semibold">Phone Number</p>
+					<input type="text" class="form-control text-secondary" formControlName="phone">
+				</div>
+				<div class="col-sm-5">
+					<p class="m-0 pb-2 fw-semibold">Email Address</p>
+					<input type="email" class="form-control text-secondary" formControlName="userEmail">
+				</div>
+				<div class="col-sm-5">
+					<p class="m-0 pb-2 fw-semibold">City</p>
+					<input type="text" class="form-control text-secondary" formControlName="city">
+				</div>
+				<div class="col-sm-5">
+					<p class="m-0 pb-2 fw-semibold">State/County</p>
+					<input type="text" class="form-control text-secondary" formControlName="state">
+				</div>
+				<div class="col-sm-5">
+					<p class="m-0 pb-2 fw-semibold">Postcode</p>
+					<input type="text" class="form-control text-secondary" formControlName="postcode">
+				</div>
+				<div class="col-sm-5">
+					<p class="m-0 pb-2 fw-semibold">Country</p>
+					<input type="text" class="form-control text-secondary" formControlName="country">
+				</div>
+				<div class="col-sm-10 d-flex pt-3 pb-5 gap-3 flex-wrap">
+						<button class="border-0 py-2 px-3 fw-semibold update-btn"  type="submit">
+							Add Information
+						</button>
+						<a class="border-0 py-2 px-3 fw-semibold update-btn text-decoration-none" (click)="updateProfile()">
+							Update Profile
+						</a>
+						<a class="border-0 py-2 px-3 fw-semibold delete-btn text-decoration-none" (click)="deleteInfo()">
+							Delete Profile
+						</a>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</section>

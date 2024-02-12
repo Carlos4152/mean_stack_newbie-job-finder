@@ -1,0 +1,82 @@
+.home_hero {
+  background: #212529;
+}
+
+.hero_btn .explor {
+  background-color: var(--primary);
+  color: white;
+}
+
+.hero_btn .explor:hover {
+  background-color: #0f2525;
+}
+
+.hero_btn .contact {
+  color: white;
+  border: 2px solid transparent;
+}
+
+.hero_btn .contact:hover {
+  border: 2px solid gray;
+}
+
+
+@media (min-width: 767px) {
+  .home_hero {
+    background:  url('../../../../../assets/hero-bg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1023px) {
+  .home_hero {
+    background:  url('../../../../../assets/hero-bg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 450px;
+  }
+}
+
+@media (min-width: 1439px) {
+  .home_hero {
+    background:  url('../../../../../assets/hero-bg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 750px;
+  }
+
+  .home_hero h1 {
+    font-size: 4rem;
+  }
+}
+
+.our_services .title {
+  color: var(--primary-400);
+}
+
+.home-about-btn,
+.cta-btn {
+  background-color: var(--primary-400);
+  color: white;
+  text-decoration: none;
+}
+
+.home-about-btn:hover,
+.cta-btn:hover {
+  background-color: #184747;
+}
+
+.choose-title-header, 
+.choose-subtitle {
+  color: #183D3D;
+}
+
+.choose-icon {
+  background-color: #183D3D;
+  color: white;
+}
+

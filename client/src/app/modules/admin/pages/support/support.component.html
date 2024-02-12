@@ -1,0 +1,40 @@
+<admin-navbar></admin-navbar>
+
+<section class="container py-5">
+  <div class="support">
+    <form class="row" [formGroup]="supportForm" (ngSubmit)="submitReport()">
+      <div class="col-lg-6 row m-0 p-0 order-2 pt-4">
+        <h2 class="fw-bold pb-4">Support Form</h2>
+        <div class="subject col-lg-5">
+          <p class="m-0 fw-bold pb-3">Subject</p>
+          <input type="text" class="form-control" formControlName="subject">
+        </div>
+        <div class="contact col-lg-5">
+          <p class="m-0 fw-bold pb-3">Contact</p>
+          <input type="number" class="form-control" formControlName="contact">
+        </div>
+        <div class="contact col-lg-10 mt-3">
+          <p class="m-0 fw-bold pb-3">Message</p>
+          <textarea name="" id="" cols="30" rows="10" class="form-control" style="resize: none;"
+          formControlName="message"
+          ></textarea>
+        </div>
+        <div class="form-btn mt-4 col-lg-10">
+          <button class="border-0 fw-semibold py-3 w-100 rounded-3" type="submit">Send Report</button>
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-2 support-content-message d-flex flex-column justify-content-center px-xl-5 py-5">
+        <h1 class="fw-bold support-title">Having Issue with the <br> platform ?</h1>
+        <div class="paragraph mt-5 text-white">
+          <p class="lh-lg">
+            We are committed to providing you with the best experience on our platform, and your feedback plays a crucial role in helping us achieve that goal. As we continuously strive to enhance and refine our services, your insights are invaluable in identifying areas for improvement.
+          </p>
+          <p class="lh-lg">
+            Your feedback is instrumental in shaping the future of our platform, and we appreciate your contribution to making it an even more seamless and user-friendly environment. Thank you for being a part of our journey to excellence!
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+  <app-alerts [title]="title" [message]="message"></app-alerts>
+</section>

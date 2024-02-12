@@ -1,0 +1,29 @@
+.footer {
+  background-color: #0a1313 ;
+}
+
+.footer a,
+.footer-letter p,
+.logo-content {
+  color: rgb(184, 184, 184);
+  transition: all 0.2s ease-in-out;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+.footer-input input {
+  box-shadow: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.footer-input button {
+  background-color: var(--primary-400);
+  color: white;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}

@@ -1,0 +1,15 @@
+.call-to-action {
+  background-image: url('../../../../../assets/banner.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cta-btn {
+  background-color: var(--primary-400);
+  color: white;
+  text-decoration: none;
+}
+
+.cta-btn:hover {
+  background-color: #184747;
+}

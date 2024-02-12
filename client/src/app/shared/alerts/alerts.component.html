@@ -1,0 +1,25 @@
+
+<div class="registration-complete px-3 py-3 position-absolute top-0 end-0 " [ngClass]="title === 'Error' ? 'd-block' : 'd-none'">
+  <div class="header d-flex gap-3 ">
+    <div class="circle-close rounded-circle">
+      <i class="bi bi-x-lg fs-4"></i>
+    </div>
+    <div class="content">
+      <h6 class="text-white fw-bold m-0">{{title}}</h6>
+      <p class="text-white m-0">{{message}}</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="signup px-3 py-3 position-absolute top-0 end-0" [ngClass]="title === 'Success' ? 'd-block' : 'd-none'">
+  <div class="header d-flex gap-3">
+    <div class="circle-close rounded-circle">
+      <i class="bi bi-check2 fs-4"></i>
+    </div>
+    <div class="content">
+      <h6 class="text-white fw-bold m-0">{{title}}</h6>
+      <p class="text-white m-0">{{message}}</p>
+    </div>
+  </div>
+</div>

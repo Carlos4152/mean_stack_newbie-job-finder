@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<section class="container position-relative py-lg-5">
+  <div class="row py-lg-5 my-lg-5 justify-content-center">
+    <div class="col-sm-6 p-0 d-none d-lg-block">
+      <img src="https://cdn.pixabay.com/photo/2015/02/02/11/09/office-620822_1280.jpg" alt=""
+        class="w-100 h-100 object-fit-cover">
+    </div>
+    <div class="col-sm-6 py-5 py-lg-0">
+      <form [formGroup]="loginForm" class="px-lg-5" (ngSubmit)="onSubmit()">
+        <h2 class="text-center mb-5 fw-bold h1">Log in</h2>
+
+        <div class="email-container position-relative d-flex align-items-center pt-4">
+          <i class="bi bi-envelope position-absolute ms-2"></i>
+          <input type="text"
+            class="form-control ps-5 border-top-0 border-start-0 border-end-0 border-bottom-2 rounded-0"
+            placeholder="Email or Username" formControlName="email">
+        </div>
+
+        <div class="email-container position-relative d-flex align-items-center pt-3 mt-4">
+          <i class="bi bi-person-lock position-absolute ms-2 fs-5"></i>
+          <input type="password"
+            class="form-control ps-5 border-top-0 border-start-0 border-end-0 border-bottom-2 rounded-0"
+            placeholder="Enter Password" formControlName="password">
+        </div>
+        <div class="forgot_password text-end pt-4">
+          <a href="#" class="fw-semibold text-dark">Forgot Password?</a>
+        </div>
+        <div class="pt-5 login-btn">
+          <button type="submit" class="fw-semibold py-3 w-100 border-0 rounded-3">LOG IN</button>
+        </div>
+
+        <div class="login-with py-5">
+          <p class="text-secondary text-center">Log in with</p>
+          <div class="login-options d-flex align-items-center justify-content-center gap-5 pt-3">
+            <div class="google-img shadow-lg p-3 rounded-3">
+              <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt=""
+                width="45">
+            </div>
+
+            <div class="faceboo-image shadow-lg  p-3 rounded-3">
+              <img src="https://cdn.iconscout.com/icon/free/png-256/free-facebook-72-189788.png" alt="" width="40">
+            </div>
+          </div>
+        </div>
+
+        <div class="register pt-lg-5 pt-5">
+          <small>
+            <p class="text-secondary m-0">Don't have an account ?</p>
+            <a routerLink="/signup" class="fw-semibold text-dark">Register Now</a>
+          </small>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<app-alerts [title]="title" [message]="desc"></app-alerts>
+
+<app-footer></app-footer>

@@ -1,0 +1,39 @@
+
+.testimonial-header span {
+  color: #183D3D;
+}
+
+.arrow-icons i {
+  color: #050505;
+  transition: all 0.2s ease-in-out;
+}
+
+.arrow-icons i:hover {
+  color: #183D3D;
+}
+
+
+.testimonial {
+  background-color: #149e9e36;
+}
+
+
+.slider .user-testi {
+  border-left: 1px solid gray;
+}
+
+.user-img img {
+  border: 2px solid #183D3D;
+}
+
+.user-detail p {
+  color: #3A3939;
+}
+
+.user-detail small {
+  color: #434343;
+}
+
+.rating i {
+  color: #ADB73B;
+}

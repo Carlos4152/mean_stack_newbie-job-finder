@@ -1,0 +1,27 @@
+.btn-container button{
+  background-color: var(--primary-400);
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-container button:hover {
+  background-color: var(--primary);
+}
+
+.registration input{
+  box-shadow: none;
+}
+
+.registration h1 {
+  color: var(--primary-400);
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.registration-complete {
+  background-color: #202020;
+  transition: all 0.4s ease-in-out;
+}
+

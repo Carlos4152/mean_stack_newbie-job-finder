@@ -1,0 +1,120 @@
+<nav class="navbar navbar-expand-lg shadow-sm d-none d-lg-block">
+  <div class="container py-lg-2 w-100">
+    <a class="navbar-brand" href="#">
+      <img src="../../../../assets/newbielogo.png" alt="" width="150">
+    </a>
+    <div class="collapse navbar-collapse ps-3">
+      <ul class="navbar-nav me-auto fw-semibold nav-list">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/jobs">Find Jobs</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/applications">My Jobs</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/support">Support</a>
+        </li>
+      </ul>
+      <div class="login-notification--section d-flex gap-3 align-items-center">
+        <div class="icons d-flex gap-3">
+          <div class="dropdown-center">
+            <button class="py-2 border-0 text-white rounded-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-chat  text-dark fs-5"></i>
+            </button>
+          </div>
+          <div class="dropdown">
+            <button class="py-2 border-0 text-white rounded-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-bell text-dark fs-5"></i>
+            </button>
+          </div>
+          <div class="dropdown">
+            <button class="py-2 border-0 text-white rounded-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-gear text-dark fs-5"></i>
+            </button>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-toggle py-2 px-3 border-0 text-white rounded-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{username | titlecase}}
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-3" href="#" routerLink="/profile">
+                <i class="bi bi-person fs-5"></i>
+                <p class="m-0">Profile</p>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-3" (click)="logedOut()" style="cursor: pointer;">
+                <i class="bi bi-box-arrow-right fs-5 ps-1"></i>
+                <p class="m-0">Sign Out</p> 
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg shadow-sm d-lg-none position-sticky top-0 z-1">
+  <div class="container py-lg-2 w-100 d-flex">
+    <a class="navbar-brand" href="#">
+      <img src="../../../../assets/newbielogo.png" alt="" width="140">
+    </a>
+      <button class="navbar-btn text-white px-3 border-0 py-2 rounded-3" (click)="toggleMenu()">
+     {{username | titlecase}}
+      </button>
+  </div>
+
+  <ul class="position-fixed responsive-menu p-0 py-3 rounded shadow-lg z-1" [ngClass]="toggleValue ? 'd-block' : 'd-none'">
+    <li class="px-4 py-2">
+      <a class="d-flex align-items-center gap-3" href="#" routerLink="/jobs">
+        <i class="bi bi-bookmark-check fs-5"></i>
+        <p class="m-0">Find Jobs</p>
+      </a>
+    </li>
+    <li class="px-4 py-2">
+      <a class="d-flex align-items-center gap-3" href="#" routerLink="/applications">
+        <i class="bi bi-card-checklist fs-5"></i>
+        <p class="m-0">My Jobs</p>
+      </a>
+    </li>
+    <li class="px-4 py-2">
+      <a class="d-flex align-items-center gap-3" href="#" routerLink="/support">
+        <i class="bi bi-question-square fs-5"></i>
+        <p class="m-0">Support</p>
+      </a>
+    </li>
+    <li class="px-4 py-2">
+      <a class="d-flex align-items-center gap-3" href="#" routerLink="/profile">
+        <i class="bi bi-person fs-5"></i>
+        <p class="m-0">Profile</p>
+      </a>
+    </li>
+    <li class="px-4 py-2">
+      <a class="d-flex align-items-center gap-3" href="#">
+        <i class="bi bi-chat  fs-5"></i>
+        <p class="m-0">Messages</p>
+      </a>
+    </li>
+    <li class="px-4 py-2">
+      <a class="d-flex align-items-center gap-3">
+        <i class="bi bi-bell fs-5"></i>
+        <p class="m-0">Notification</p>
+      </a>
+    </li>
+    <li class="px-4 py-2">
+      <a class="d-flex align-items-center gap-3">
+        <i class="bi bi-gear  fs-5"></i>
+        <p class="m-0">Settings</p>
+      </a>
+    </li>
+    <li (click)="logedOut()" class="px-4 py-2">
+      <a class="d-flex align-items-center gap-3" href="#">
+        <i class="bi bi-box-arrow-right fs-5 ps-1"></i>
+        <p class="m-0">Sign Out</p> 
+      </a>
+    </li>
+  </ul>
+</nav>

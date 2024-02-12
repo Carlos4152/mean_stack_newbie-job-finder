@@ -1,0 +1,63 @@
+.nav-list a {
+  color: #b4b2b2;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-list a:hover {
+  color: var(--primary-400);
+}
+
+.nav-list .active a{
+  color: var(--primary-400);
+}
+
+.navbar-btn {
+  background-color: var(--primary-400);
+  outline: none;
+}
+
+
+.dropdown-toggle {
+  background-color: var(--primary-400);
+}
+
+
+
+.desktop-dropdown-menu li:hover {
+  background-color: var(--primary-400);
+}
+
+.icons button {
+  background-color: white;
+  color: black;
+}
+
+.navbar {
+  background-color: white;
+}
+
+
+
+
+
+
+
+.responsive-menu {
+  background-color: white;
+  list-style: none;
+  right: 20px;
+  top: 85px;
+}
+
+.responsive-menu li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.responsive-menu li:hover {
+  background-color: var(--primary-400);
+}
+
+.responsive-menu li:hover a {
+color: white;
+}

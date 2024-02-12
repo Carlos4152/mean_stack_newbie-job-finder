@@ -1,0 +1,14 @@
+
+.email-container input {
+  box-shadow: none;
+}
+
+.login-btn button {
+  background-color: var(--primary-400);
+  color: white;
+  letter-spacing: 2px;
+}
+
+.login-btn button:hover {
+  background-color: var(--primary);
+}

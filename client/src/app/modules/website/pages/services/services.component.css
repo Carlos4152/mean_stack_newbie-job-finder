@@ -1,0 +1,23 @@
+.services-hero {
+  background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('../../../../../assets/services-hero.jpg');
+}
+
+.service-content h2 {
+  color: var(--primary);
+}
+
+.service-btn a {
+  background-color: var(--primary-400);
+  text-decoration: none;
+  color: white;
+}
+
+.service-btn a:hover {
+  background-color: var(--primary);
+}
+
+@media (min-width: 1300px){
+  .services-hero h1 {
+    font-size: 3.8rem;
+  }
+}

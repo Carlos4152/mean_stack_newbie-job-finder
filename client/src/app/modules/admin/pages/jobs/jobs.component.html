@@ -1,0 +1,143 @@
+<admin-navbar></admin-navbar>
+
+<section class="jobs-section container-fluid">
+  <!--- Welcome Title -->
+  <div class="welcome-title container pt-5">
+    <h1 class="text-center fw-bold">Welcome {{ username | titlecase}}<span class="mb-4">🎉</span></h1>
+    <p class="m-0 text-center py-3">
+      Let's start searching for a new roles or jobs. We are excited for you. <br>
+      We will make this journey easy, don't worry.
+    </p>
+  </div>
+
+  <!--- Search Job Inputs -->
+  <div class="searchbar container">
+    <form class="row justify-content-center" [formGroup]="searchForm" (ngSubmit)="searchJob()">
+      <div class="job-title-search col-sm-4">
+        <input type="text" class="form-control py-2 ps-3" placeholder="Enter job title" formControlName ="position" required>
+      </div>
+      <div class="job-title-search col-sm-4 my-3 my-md-0">
+        <input type="text" class="form-control py-2 ps-3" placeholder="Location" formControlName ="location" required>
+      </div>
+      <div class="job-title-search col-sm-3 col-md-6 d-flex gap-3 py-md-3 py-lg-0 justify-content-center col-lg-3">
+        <button class="fw-semibold px-3  border-0 fw-semibold py-2 rounded-1" type="submit">Search</button>
+        <button class="fw-semibold px-3  border-0 fw-semibold py-2 rounded-1" (click)="resetSearch()"> 
+          <i class="bi bi-arrow-clockwise text-white"></i>
+          Rest
+        </button>
+      </div>
+    </form>
+    <hr>
+  </div>
+
+
+  <div class="container job-posting-details pt-3">
+    <div class="row justify-content-center">
+      <!--- Post Card - Jobs  -->
+      <div class="col-sm-3 col-md-4 job-post">
+        <div class="job-card border-bottom p-2 d-none d-md-block" *ngFor="let job of jobs; let i = index"
+          (click)="showJobDetails(job._id, i)" [ngClass]="i === selectedIndex ? 'active-class': '' ">
+          <div class="card_header d-flex justify-content-between">
+            <div class="card-title">
+              <p class="m-0 fw-semibold pb-1">{{job.company}}</p>
+              <h6 class="fw-semibold m-0">{{job.position}}</h6>
+              <p>{{job.location}}</p>
+            </div>
+            <i class="bi bi-bookmark-star fs-5"></i>
+            <i class="bi bi-bookmark-star-fill d-none"></i>
+          </div>
+          <div class="post-date d-flex justify-content-between">
+            <p class="m-0">Office</p>
+            <p class="m-0">7d</p>
+          </div>
+        </div>
+        <!-- Responsive Card Design -->
+        <div class="job-card border-bottom p-2 d-md-none" *ngFor="let job of jobs; let i = index"
+          (click)="showJobDetails(job._id, i)" [ngClass]="i === selectedIndex ? 'active-class': '' "
+          [routerLink]="['/jobs', job._id]">
+          <div class="card_header d-flex justify-content-between">
+            <div class="card-title">
+              <p class="m-0 fw-semibold pb-1">{{job.company}}</p>
+              <h6 class="fw-semibold m-0">{{job.position}}</h6>
+              <p>{{job.location}}</p>
+            </div>
+            <i class="bi bi-bookmark-star fs-5"></i>
+            <i class="bi bi-bookmark-star-fill d-none"></i>
+          </div>
+          <div class="post-date d-flex justify-content-between">
+            <p class="m-0">Office</p>
+            <p class="m-0">7d</p>
+          </div>
+        </div>
+      </div>
+      <!--- Details Job Container  -->
+      <div class="col-sm-6 col-md-7 border-bottom rounded-top-3 p-0 h-100 d-none d-md-block">
+        <!--- Details Title  -->
+        <div
+          class="job-details-header d-flex justify-content-between align-items-center shadow-sm px-3 py-1 position-sticky top-0"
+          *ngFor="let item of selectedJob;">
+          <div class="card-title">
+            <p class="m-0 fw-semibold">{{item.company}}</p>
+            <h4 class="fw-semibold m-0">{{item.position}}</h4>
+            <p class="m-0">{{item.location}}</p>
+          </div>
+          <div class="application-action d-flex align-items-center gap-3">
+            <i class="bi bi-bookmark-star fs-4"></i>
+            <button class="border-0 px-3 py-2 fw-semibold" (click)="createApplication(item)">Apply Now</button>
+          </div>
+        </div>
+        <!--- Details Description  -->
+        <div class="job-desc pt-3 px-3 pb-md-3 " *ngFor="let item of selectedJob;">
+          <div class="duties">
+            <p class="m-0 fw-bold">Responsibilities</p>
+            <p class="">{{item.duties.desc}}:</p>
+
+            <ul class="d-flex flex-column gap-2" *ngFor="let item of selectedJob;">
+              <li *ngFor="let job of item.duties.list">
+                {{ job }}
+              </li>
+            </ul>
+          </div>
+
+          <div class="requirements pb-md-3">
+            <p class="m-0 fw-bold">Required Skills</p>
+            <p class="">
+              As a Front End Developer at PSAI, you will have the ability to hone your craft and advance your core
+              skillset; but before we can do that, here are just a few of the skills and experience you should have
+              coming
+              in:
+            </p>
+
+            <ul class="d-flex flex-column gap-2">
+              <li>
+                A bachelor’s degree/pursuing a bachelor's degree in design, computer science, information, or a related
+                field
+              </li>
+              <li>
+                Expert level knowledge and firsthand experience with HTML and CSS
+              </li>
+              <li>
+                Expert level knowledge and firsthand experience with Javascript/JQuery
+              </li>
+              <li>
+                Expert level knowledge and firsthand experience in desktop, mobile and responsive web design
+              </li>
+              <li>
+                Experience/familiarity with .Net/MVC/Razor and Microsoft Azure
+              </li>
+              <li>
+                Ability to explain and translate your work to those under you as well as in different departments
+              </li>
+            </ul>
+
+            <div class="salary d-flex justify-content-between px-5 py-2" *ngFor="let item of selectedJob;">
+              <p class="m-0 text-white fw-semibold">Average Salary</p>
+              <p class="m-0 text-success fw-semibold">{{item.salary}}</p>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+  <app-alerts [title]="title" [message]="desc"></app-alerts>
+</section>

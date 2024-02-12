@@ -1,0 +1,30 @@
+ h2 {
+  color: var(--primary-400);
+}
+
+.support-title {
+  color: white;
+}
+
+.support input, .support textarea {
+  box-shadow: none;
+}
+
+.support button {
+  background-color: var(--primary-400);
+  color: white;
+}
+
+.support button:hover {
+  background-color: var(--primary);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.support-content-message {
+  background-color: var(--primary-400);
+}
