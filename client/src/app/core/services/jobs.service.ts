@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class JobsService {
-  jobsURL = 'http://localhost:3000/dashboard/jobs';
+  jobsURL = 'https://backend-dev-ednp.3.us-1.fl0.io/dashboard/jobs';
 
   constructor(private http: HttpClient) { }
 

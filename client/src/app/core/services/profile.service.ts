@@ -11,8 +11,8 @@ export class ProfileService {
 
   constructor(private http: HttpClient) { }
 
-  URI = 'http://localhost:3000/user/profile';
-  URI_PICTURE = 'http://localhost:3000/user/images/profile'
+  URI = 'https://backend-dev-ednp.3.us-1.fl0.io/user/profile';
+  URI_PICTURE = 'https://backend-dev-ednp.3.us-1.fl0.io/user/images/profile'
 
   update(profile: Profile): Observable<Profile> {
     return this.http.put<Profile>(this.URI, profile)
