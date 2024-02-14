@@ -21,10 +21,7 @@ const postImage = async (req, res) => {
       imagePath: saveImage(req.file)
     });
 
-    res.status(200).json({
-      message: 'Image has been uploaded successfully',
-
-    });
+    res.status(200).json({  message: 'Image has been uploaded successfully', });
   } catch (error) {
     res.status(400).json({message: 'Something is not right carlos'})
   }

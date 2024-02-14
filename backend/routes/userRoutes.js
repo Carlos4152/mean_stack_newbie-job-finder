@@ -32,5 +32,3 @@ userRouter.delete('/profile/:userId', checkToken, deleteUserProfile);
 userRouter.get('/profile/:userId', checkToken, getUserProfile)
 
 export { userRouter }
-
-//

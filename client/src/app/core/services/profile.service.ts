@@ -12,8 +12,8 @@ export class ProfileService {
   constructor(private http: HttpClient) { }
 
   URI = 'https://backend-dev-ednp.3.us-1.fl0.io/user/profile';
-  URI_PICTURE = 'https://backend-dev-ednp.3.us-1.fl0.io/user/images/profile'
-
+  //URI_PICTURE = 'https://backend-dev-ednp.3.us-1.fl0.io/user/images/profile'
+  URI_PICTURE = 'https://localhost:3000/user/images/profile'
   update(profile: Profile): Observable<Profile> {
     return this.http.put<Profile>(this.URI, profile)
   }
@@ -32,7 +32,7 @@ export class ProfileService {
 
   // *************************** User Photo API *********************************** 
 
-  uploadImage(image: any): Observable<Image>{
+  uploadImage(image: File): Observable<Image>{
     const formData = new FormData();
     formData.append('imageProfile', image);
     return this.http.post<Image>(this.URI_PICTURE, formData);
