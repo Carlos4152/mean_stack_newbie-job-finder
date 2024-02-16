@@ -1,27 +1,24 @@
-# Client
+# NEWBIE JOB FINDER
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
+It is a company that focuses on helping entry-level candidates or people who want to change careers. Newbie Job Finder also has a dashboard that features entry-level positions. Users are allowed to apply, remove, and view application details, search for job titles and cities or states, review submitted applications, get in contact with the technical department, create a profile, and upload or update pictures.
 
-## Development server
+**Link to project:** https://newbiejobfinder.netlify.app/home
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Demo Account**
 
-## Code scaffolding
+Email: carlos@gmail.com
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Password: Colombia2023
 
-## Build
+[![newbiejobfinder.png](https://i.postimg.cc/4dxqZdsN/newbiejobfinder.png)](https://postimg.cc/xkBt39XW)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**Technologies:** HTML, CSS, Bootstrap, JavaScript, TypeScript, Angular 16
 
-## Running unit tests
+I identify as a Front End Software Engineer with a passion for continuous learning and project development to enhance my skills further. While I currently excel in Front End development, my ambition is to transition into a Fullstack Software Engineer role. I am fully aware that achieving this goal requires dedicated efforts in building comprehensive Fullstack applications.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Examples
 
-## Running end-to-end tests
+**Job Hunter:** https://github.com/Carlos4152/mean-stack-jobhunter
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
