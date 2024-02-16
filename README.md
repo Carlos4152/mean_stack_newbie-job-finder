@@ -1,6 +1,6 @@
 # NEWBIE JOB FINDER
 
-It is a company that focuses on helping entry-level candidates or people who want to change careers. Newbie Job Finder also has a dashboard that features entry-level positions. Users are allowed to apply, remove, and view application details, search for job titles and cities or states, review submitted applications, get in contact with the technical department, create a profile, and upload or update pictures.
+It specializes in assisting entry-level candidates and individuals seeking career changes. Newbie Job Finder provides a user-friendly dashboard showcasing a variety of entry-level positions. Users have the flexibility to apply for, withdraw from, and view application details, as well as search for job titles in specific cities or states. They can also conveniently review submitted applications, reach out to our technical department for assistance, personalize their profiles by uploading or updating pictures, and add their personal information to enhance their profiles.
 
 **Link to project:** https://newbiejobfinder.netlify.app/home
 
