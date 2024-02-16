@@ -11,8 +11,8 @@ export class ProfileService {
 
   constructor(private http: HttpClient) { }
 
-  URI = 'https://backend-dev-ednp.3.us-1.fl0.io/user/profile';
-  URI_PICTURE = 'https://backend-dev-ednp.3.us-1.fl0.io/user/images/profile'
+  URI = 'https://mean-stack-newbie-job-finder-server.vercel.app/user/profile';
+  URI_PICTURE = 'https://mean-stack-newbie-job-finder-server.vercel.app/user/images/profile'
 
   update(profile: Profile): Observable<Profile> {
     return this.http.put<Profile>(this.URI, profile)

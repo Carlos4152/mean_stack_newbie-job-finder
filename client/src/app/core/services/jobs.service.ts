@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class JobsService {
-  jobsURL = 'https://backend-dev-ednp.3.us-1.fl0.io/dashboard/jobs';
+  jobsURL = 'https://mean-stack-newbie-job-finder-server.vercel.app/dashboard/jobs';
 
   constructor(private http: HttpClient) { }
 
