@@ -9,7 +9,7 @@ import { Application } from '../models/application.interface';
   providedIn: 'root'
 })
 export class UserService {
-  userURL = 'https://mean-stack-newbie-job-finder-server.vercel.app/user';
+  userURL = 'https://mean-stack-newbie-job-finder.vercel.app/user';
   userApplications: Application[] =[]
 
   constructor(private http: HttpClient) { }

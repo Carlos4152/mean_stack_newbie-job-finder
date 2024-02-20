@@ -11,8 +11,8 @@ export class ProfileService {
 
   constructor(private http: HttpClient) { }
 
-  URI = 'https://mean-stack-newbie-job-finder-server.vercel.app/user/profile';
-  URI_PICTURE = 'https://mean-stack-newbie-job-finder-server.vercel.app/user/images/profile'
+  URI = 'https://mean-stack-newbie-job-finder.vercel.app/user/profile';
+  URI_PICTURE = 'https://mean-stack-newbie-job-finder.vercel.app/user/images/profile'
 
 
 
