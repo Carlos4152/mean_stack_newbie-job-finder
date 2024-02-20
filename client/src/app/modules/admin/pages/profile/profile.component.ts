@@ -137,7 +137,7 @@ export class ProfileComponent {
 					console.log(response);
 				},
 				error: (error) => {
-					console.log('Coming from uploadImage  ' + error.error.message);
+					//console.log('Coming from uploadImage  ' + error.error.message);
 				}
 			});
 		} else {
@@ -149,8 +149,10 @@ export class ProfileComponent {
 		if (this.file) {
 			this.profileService.updateImage(this.file).subscribe({
 				next: (response) => {
+					
 				},
 				error: (error) => {
+					//console.log(error)
 				}
 			});
 		} else {
@@ -174,8 +176,9 @@ export class ProfileComponent {
 
 		this.profileService.getImages().subscribe({
 			next: response => {
+				//console.log('Profile get service ' + response)
 				if (response) {
-					this.photoSelected = response;
+					this.photoSelected = response
 					this.toggleButton = true;
 				}
 			},

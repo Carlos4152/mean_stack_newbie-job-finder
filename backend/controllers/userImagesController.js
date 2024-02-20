@@ -29,9 +29,12 @@ const updateImage = async (req, res) => {
     const userId = req.user;
     const imageUrl = saveImage(req.file);
     const result = await cloud.uploader.upload(req.file.path);
-    console.log(result)
+
     const userProfile = await Image.findOne({ userId });
-    const updatedPicture = await Image.findByIdAndUpdate(userProfile._id, { imageUrl: result.secure_url }, { new: true });
+    const updatedPicture = await Image.findByIdAndUpdate(userProfile._id, { 
+      imageUrl: result.secure_url,
+      name: req.file.originalname,
+    }, { new: true });
     res.send(updatedPicture)
   } catch (error) {
     res.status(400).json({ message: 'Something is not right carlos' })
@@ -41,7 +44,7 @@ const updateImage = async (req, res) => {
 const getImages = async (req, res) => {
   try {
     const images = await Image.findOne({ userId: req.user });
-    console.log(images)
+    
     const imageUrl = images.imageUrl;
     res.status(200).json(imageUrl)
   } catch (error) {

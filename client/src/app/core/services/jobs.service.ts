@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class JobsService {
   jobsURL = 'https://mean-stack-newbie-job-finder-server.vercel.app/dashboard/jobs';
-
+ 
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Application[]> {
