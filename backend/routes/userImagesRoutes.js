@@ -6,11 +6,11 @@ import upload from '../utils/multer.js';
 
 const imageRouter = express.Router();
 
-imageRouter.post('/images/profile', upload, checkToken, postImage);
+imageRouter.post('/images/profile', checkToken, postImage);
 
 imageRouter.get('/images/profile', checkToken, getImages);
 
-imageRouter.put('/images/profile', upload, checkToken, updateImage);
+imageRouter.put('/images/profile', checkToken, updateImage);
 
 
 export { imageRouter }
