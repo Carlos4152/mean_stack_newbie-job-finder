@@ -2,7 +2,6 @@ import jwt from "jsonwebtoken";
 
 const checkToken = (req, res, next) => {
     const token = req.header('Authorization').split(' ')[1];
-    console.log(token);
     if (!token) return res.status(400).json({ message: 'Token must be include in the header' });
 
     try {

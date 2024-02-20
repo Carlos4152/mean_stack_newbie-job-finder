@@ -6,7 +6,7 @@ import upload from '../utils/multer.js';
 
 const imageRouter = express.Router();
 
-imageRouter.post('/images/profile', checkToken, postImage);
+imageRouter.post('/images/profile', upload.single('imageProfile'), checkToken, postImage);
 
 imageRouter.get('/images/profile', checkToken, getImages);
 

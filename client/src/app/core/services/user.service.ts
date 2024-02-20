@@ -10,6 +10,8 @@ import { Application } from '../models/application.interface';
 })
 export class UserService {
   userURL = 'https://mean-stack-newbie-job-finder.vercel.app/user';
+
+
   userApplications: Application[] =[]
 
   constructor(private http: HttpClient) { }

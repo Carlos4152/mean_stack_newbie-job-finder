@@ -15,7 +15,7 @@ export class ProfileService {
   URI_PICTURE = 'https://mean-stack-newbie-job-finder.vercel.app/user/images/profile'
 
 
-
+  
   update(profile: Profile): Observable<Profile> {
     return this.http.put<Profile>(this.URI, profile)
   }

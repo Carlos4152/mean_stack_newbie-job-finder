@@ -132,12 +132,12 @@ export class ProfileComponent {
 
 	uploadImage() {
 		if (this.file) {
+			console.log(this.file)
 			this.profileService.uploadImage(this.file).subscribe({
 				next: (response) => {
-					console.log(response);
 				},
 				error: (error) => {
-					//console.log('Coming from uploadImage  ' + error.error.message);
+					console.log(error)
 				}
 			});
 		} else {
