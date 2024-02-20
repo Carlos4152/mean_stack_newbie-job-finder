@@ -1,51 +1,51 @@
 import fs from 'node:fs';
 import Image from '../models/imageModel.js';
-import multer from 'multer';
+import cloud from '../utils/cloudinary.js'
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-      cb(null, './uploads');
-  },
-  filename: (req, file, cb) => {
-      cb(null, file.originalname);
-  }
-});
-
-const upload = multer({ storage: storage });
 
 const postImage = async (req, res) => {
   try {
+    if (!req.file) return res.status(400).json({ message: 'No file uploaded' });
+    
+    const result = await cloud.uploader.upload(req.file.path);
+
     const newImage = await Image.create({
       userId: req.user,
       name: req.file.originalname,
-      imagePath: saveImage(req.file)
+      imageUrl: result.secure_url,
+      imageId: result.public_id
     });
 
-    res.status(200).json({  message: 'Image has been uploaded successfully', });
+    res.status(200).json(newImage);
+    
   } catch (error) {
-    res.status(400).json({message: 'Something is not right carlos'})
+    res.status(400).json({ message: 'Something is not right carlos' })
   }
 }
+
 
 const updateImage = async (req, res) => {
   try {
     const userId = req.user;
-    const imageUrl =  saveImage(req.file);
+    const imageUrl = saveImage(req.file);
+    const result = await cloud.uploader.upload(req.file.path);
+    console.log(result)
     const userProfile = await Image.findOne({ userId });
-    const updatedPicture = await Image.findByIdAndUpdate(userProfile._id, { imagePath: imageUrl }, { new: true});
+    const updatedPicture = await Image.findByIdAndUpdate(userProfile._id, { imageUrl: result.secure_url }, { new: true });
     res.send(updatedPicture)
   } catch (error) {
-    res.status(400).json({message: 'Something is not right carlos'})
+    res.status(400).json({ message: 'Something is not right carlos' })
   }
 }
 
 const getImages = async (req, res) => {
   try {
-    const images = await Image.findOne({ userId: req.user});
-    const imageUrl = `http://localhost:3000/${images.imagePath}`;
-     res.status(200).json(imageUrl)
+    const images = await Image.findOne({ userId: req.user });
+    console.log(images)
+    const imageUrl = images.imageUrl;
+    res.status(200).json(imageUrl)
   } catch (error) {
-    res.status(400).json({message: 'Something is not right carlos'})
+    res.status(400).json({ message: 'Something is not right carlos' })
   }
 }
 
@@ -56,4 +56,4 @@ function saveImage(file) {
   return newPath;
 }
 
-export { postImage, updateImage, getImages, upload}
+export { postImage, updateImage, getImages }

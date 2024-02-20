@@ -3,7 +3,8 @@ import  mongoose from 'mongoose';
 const imageSchema = new mongoose.Schema({
   userId: String,
   name: String,
-  imagePath: String
+  imageUrl: String,
+  imageId: String
 },
 {
   timestamps: true

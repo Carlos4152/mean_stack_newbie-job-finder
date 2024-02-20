@@ -1,6 +1,6 @@
 import express from 'express';
 import { deleteUserProfile, getApplicationById, getApplications, getUserProfile, postApplication, removeApplication, saveUserProfile, updateUserProfile, userLogin, userRegistration } from '../controllers/userControllers.js';
-import { checkToken } from '../middleware/auth.middleware.js';
+import checkToken  from '../middleware/auth.middleware.js';
 
 const userRouter = express.Router();
 
