@@ -10,7 +10,7 @@ imageRouter.post('/images/profile', upload.single('imageProfile') , checkToken, 
 
 imageRouter.get('/images/profile', checkToken, getImages);
 
-imageRouter.put('/images/profile', checkToken, updateImage);
+imageRouter.put('/images/profile', upload.single('imageProfile'), checkToken, updateImage);
 
 
 export { imageRouter }

@@ -33,17 +33,22 @@ const updateImage = async (req, res) => {
 
     const userId = req.user;
     const imageBuffer = req.file.buffer;
-    const imageBase64 = imageBuffer.toString('base64')
+    const imageBase64 = imageBuffer.toString('base64');
 
     const result = await cloud.uploader.upload(`data:${req.file.mimetype};base64,${imageBase64}`, { resource_type: 'auto' });
 
+
     const userProfile = await Image.findOne({ userId });
+
     const updatedPicture = await Image.findByIdAndUpdate(userProfile._id, { 
       imageUrl: result.secure_url,
-      name: saveImage(req.file),
+      name: req.file.originalname,
     }, { new: true });
+
     res.send(updatedPicture)
+
   } catch (error) {
+    console.log(error)
     res.status(400).json({ message: 'Something is not right carlos' })
   }
 }
